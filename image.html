@@ -1,0 +1,93 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/jquery/dist/jquery.js"></script>
+  <script src="https://unpkg.com/image-map/dist/image-map.jquery.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    body {
+      background-color: black;
+    }
+
+    img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+    }
+
+    @media screen and (orientation: landscape) {
+      img {
+        transform: rotate(270deg);
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+<!--   <a href="https://shrub-large-quokka.glitch.me/cam_no_gesture.html"><button class="button button5"><i class="fa fa-home"></i></button></a> -->
+  <img
+    src="https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2Fsample_2.jpg?v=1594807128952"
+    usemap="#image-map"
+  />
+
+  <map name="image-map">
+    <area
+      target="_self"
+      alt="target1"
+      title="target1"
+      href="target1.html?device=lower"
+      coords="417,264,686,548"
+      shape="rect"
+    />
+    <area
+      target="_self"
+      alt="target2"
+      title="target2"
+      href="target2.html?device=lower"
+      coords="538,1167,817,1303"
+      shape="rect"
+    />
+    <area
+      target="_self"
+      alt="target3"
+      title="target3"
+      href="target3.html?device=lower"
+      coords="169,1008,375,1155"
+      shape="rect"
+    />
+    <area
+      target="_self"
+      alt="target4"
+      title="target4"
+      href="target4.html?device=lower"
+      coords="148,1259,336,1462"
+      shape="rect"
+    />
+  </map>
+  <script>
+    $("img[usemap]").imageMap();
+  </script>
+</body>

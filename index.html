@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Gesture Interactions - A-Frame & AR.js</title>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+  <script>
+    window.onload = function () {
+      document
+        .getElementById("marker_first")
+        .addEventListener("markerFound", e => {
+          document.getElementsByClassName(
+            "say-hi-button first"
+          )[0].style.display = "block";
+
+          document.getElementsByClassName(
+            "say-hi-button second"
+          )[0].style.display = "block";
+
+          document.getElementsByClassName(
+            "say-hi-button third"
+          )[0].style.display = "block";
+        });
+
+      document
+        .getElementById("marker_first")
+        .addEventListener("markerLost", e => {
+          document.getElementsByClassName(
+            "say-hi-button first"
+          )[0].style.display = "none";
+
+          document.getElementsByClassName(
+            "say-hi-button second"
+          )[0].style.display = "none";
+
+          document.getElementsByClassName(
+            "say-hi-button third"
+          )[0].style.display = "none";
+        });
+
+      document
+        .getElementById("marker_second")
+        .addEventListener("markerFound", e => {
+          document.getElementsByClassName(
+            "say-hi-button fourth"
+          )[0].style.display = "block";
+
+          document.getElementsByClassName(
+            "say-hi-button fifth"
+          )[0].style.display = "block";
+
+          document.getElementsByClassName(
+            "say-hi-button sixth"
+          )[0].style.display = "block";
+        });
+
+      document
+        .getElementById("marker_second")
+        .addEventListener("markerLost", e => {
+          document.getElementsByClassName(
+            "say-hi-button fourth"
+          )[0].style.display = "none";
+
+          document.getElementsByClassName(
+            "say-hi-button fifth"
+          )[0].style.display = "none";
+
+          document.getElementsByClassName(
+            "say-hi-button sixth"
+          )[0].style.display = "none";
+        });
+
+      document
+        .getElementById("marker_third")
+        .addEventListener("markerFound", e => {
+          document.getElementsByClassName(
+            "say-hi-button seven"
+          )[0].style.display = "block";
+
+          document.getElementsByClassName(
+            "say-hi-button eight"
+          )[0].style.display = "block";
+        });
+
+      document
+        .getElementById("marker_third")
+        .addEventListener("markerLost", e => {
+          document.getElementsByClassName(
+            "say-hi-button seven"
+          )[0].style.display = "none";
+
+          document.getElementsByClassName(
+            "say-hi-button eight"
+          )[0].style.display = "none";
+        });
+
+      document.querySelector(".first").addEventListener("click", function () {
+        window.location.href = "target1.html";
+      });
+
+      document.querySelector(".second").addEventListener("click", function () {
+        window.location.href = "target2.html";
+      });
+
+      document.querySelector(".third").addEventListener("click", function () {
+        window.location.href = "target3.html";
+      });
+
+      document.querySelector(".fourth").addEventListener("click", function () {
+        window.location.href = "target4.html";
+      });
+
+      document.querySelector(".fifth").addEventListener("click", function () {
+        window.location.href = "target5.html";
+      });
+
+      document.querySelector(".sixth").addEventListener("click", function () {
+        window.location.href = "target6.html";
+      });
+
+      document.querySelector(".seven").addEventListener("click", function () {
+        window.location.href = "target7.html";
+      });
+
+      document.querySelector(".eight").addEventListener("click", function () {
+        window.location.href = "target8.html";
+      });
+    };
+  </script>
+  <style>
+    html,
+    body {
+      margin: 0px;
+      overflow: hidden;
+    }
+
+    .arjs-loader {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .arjs-loader div {
+      text-align: center;
+      font-size: 1.25em;
+      color: white;
+    }
+
+    .buttons {
+      position: absolute;
+      width: 100%;
+      height: 5em;
+      display: flex;
+      z-index: 10;
+      bottom: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .say-hi-button {
+      border-radius: 4px;
+      border: none;
+      width: 30%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.first {
+      margin-left: -60%;
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F1.png?v=1595239944528");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.second {
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F3.png?v=1595239944035");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.third {
+      margin-right: -60%;
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F2.png?v=1595239944079");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.fourth {
+      margin-left: -60%;
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F1.JPG?v=1595411955476");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.fifth {
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F2.JPG?v=1595411955595");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.sixth {
+      margin-right: -60%;
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F3.JPG?v=1595411955290");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.seven {
+      margin-left: -60%;
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F3_1.jpg?v=1595847688325");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .say-hi-button.eight {
+      margin-right: -60%;
+      margin-bottom: 10%;
+      background: url("https://cdn.glitch.com/6de5f26f-9cf8-4996-847a-96fb8a180db2%2F3_2.jpg?v=1595847688641");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  </style>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+
+  <div class="buttons">
+    <button class="say-hi-button first" style="display:none;"></button>&nbsp;&nbsp;
+    <button class="say-hi-button second" style="display:none;"></button>&nbsp;&nbsp;
+    <button class="say-hi-button third" style="display:none;"></button>
+
+    <button class="say-hi-button fourth" style="display:none; "></button>&nbsp;&nbsp;
+    <button class="say-hi-button fifth" style="display:none; "></button>&nbsp;&nbsp;
+    <button class="say-hi-button sixth" style="display:none;"></button>
+
+    <button class="say-hi-button seven" style="display:none; "></button>&nbsp;&nbsp;
+    <button class="say-hi-button eight" style="display:none; "></button>
+  </div>
+
+  <a-scene vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer:true; antialias: false; alpha: true; precision: medium;" embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+    <a-nft id="marker_first" type="nft" url="./assets/3/3" smooth="true" smoothcount="10" smoothtolerance="0.01"
+      smooththreshold="5" emitevents="true" raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+    </a-nft>
+
+    <a-nft id="marker_second" type="nft" url="./assets/AKM/AKM" smooth="true" smoothcount="10" smoothtolerance="0.01"
+      smooththreshold="5" emitevents="true" raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+    </a-nft>
+
+    <a-nft id="marker_third" type="nft" url="./assets/4time_sharp/4time_sharp" smoothcount="10" smoothtolerance="0.01"
+      smooththreshold="5" emitevents="true" raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
